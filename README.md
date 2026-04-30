@@ -1,13 +1,15 @@
 <div align="center">
 
-# 🚀 SEAN WALTER | AI EXPLORER
+<img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&weight=700&size=38&duration=2500&pause=800&color=00F5FF&center=true&vCenter=true&width=800&lines=SEAN+WALTER;AI+EXPLORER" alt="Typing SVG" />
 
-**Sean's dream sets sail here** — 从自动化测试驶向 AI Agent 的深空之旅
+  **🚀 用 AI 解决真实业务问题** 的深空探索者
 
-<img src="https://img.shields.io/badge/Location-南京,江苏-00f5ff?style=flat-square&logo=googlemaps" alt="Nanjing" />
-<img src="https://img.shields.io/badge/Status-Open for Projects & Opportunities-22c55e?style=flat-square" alt="Open for Work" />
+<img src="https://img.shields.io/badge/DEEP+SPACE+NODE-050508?style=for-the-badge&logo=starship&logoColor=00f5ff" />
+<img src="https://img.shields.io/badge/NANJING%20%E2%9C%88%EF%B8%8F-00f5ff?style=for-the-badge" />
+<img src="https://img.shields.io/badge/AI+CORE+v0.4-22c55e?style=for-the-badge&logo=ai&logoColor=black" />
 
 </div>
+
 
 ---
 
@@ -24,7 +26,7 @@
 
 ### 🔥 Tech Stack & Tools
 
-<div align="center">
+<div align="left">
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
