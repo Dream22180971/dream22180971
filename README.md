@@ -83,6 +83,15 @@
 - **目标**：构建真正落地的 AI 解决方案，持续输出高质量开源与内容
 
 ---
+###  🐍 GitHub Contribution Snake
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dream22180971/Dream22180971/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Dream22180971/Dream22180971/output/github-snake.svg">
+    <img src="https://raw.githubusercontent.com/Dream22180971/Dream22180971/output/github-snake.svg" alt="GitHub Snake Animation" style="max-width: 100%;">
+  </picture>
+</div>
 
 <div align="center">
 
@@ -95,3 +104,5 @@
 ---
 
 *Made with deep space aesthetics • Powered by curiosity and caffeine*
+
+
