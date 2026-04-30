@@ -23,18 +23,34 @@
 我相信 **AI 应该解决真实业务问题**，而非停留在 Demo。目前正专注于让 AI Agent 真正进入生产环境。
 
 ---
+## 🛠️ Tech Stack & Tools
 
-### 🔥 Tech Stack & Tools
+### Languages
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/Java-007396?logo=java&logoColor=white)
 
-<div align="left">
+### Frontend
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?logo=vue.js&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-121212?style=for-the-badge&logo=langchain&logoColor=00f5ff)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+### Backend & Framework
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![Spring](https://img.shields.io/badge/Spring-6DB33D?logo=spring&logoColor=white)
+![SSM](https://img.shields.io/badge/SSM-000000?logo=java&logoColor=white)
 
-**更多**：Vue3 • React • Tailwind • Framer Motion • FAISS • PostgreSQL • Docker • Vercel • pytest
+### AI & Data
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?logo=langchain&logoColor=white)
+![FAISS](https://img.shields.io/badge/FAISS-000000?logo=meta&logoColor=white)
+![DashScope](https://img.shields.io/badge/DashScope-FF6A00?logo=alibaba&logoColor=white)
+
+### Tools & Others
+![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![Coze](https://img.shields.io/badge/Coze-000000?logo=coze&logoColor=white)
 
 </div>
 
