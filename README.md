@@ -18,7 +18,7 @@
 - **当前身份**：自动化测试工程师 → **AI Agent Developer**
 - **核心方向**：RAG 系统、AI Agent、多模态应用、智能自动化
 - **目前状态**：在杭州，求职中 / 接项目中，持续探索 AI 落地应用
-- **个人站点**：[seanwalter.vercel.app](https://seanwalter.vercel.app)/[https://seanwalter.top/](https://seanwalter.top/)/
+- **个人站点**：[https://seanwalter.top/](https://seanwalter.top/)
 
 我相信 **AI 应该解决真实业务问题**，而非停留在 Demo。目前正专注于让 AI Agent 真正进入生产环境。
 
@@ -72,13 +72,13 @@
 - **RAG Knowledge Base & AI Agents**（进行中）  
   正在开发的多个生产级 RAG 系统与智能 Agent，欢迎交流合作。
 
-更多项目请访问我的 [个人网站 Projects 页面](https://seanwalter.vercel.app/projects)
+更多项目请访问我的 [个人网站 Projects 页面](https://seanwalter.top/projects)
 
 ---
 
 ### 📊 Mission Log
 
-- **个人博客**：[seanwalter.vercel.app/blog](https://seanwalter.vercel.app/blog)（技术思考 + 学习记录）
+- **个人博客**：[seanwalter.top](https://seanwalter.top/knowledge)（技术思考 + 学习记录）
 - **Experiments**：AI Agent 实验、工具开发、Side Projects（持续更新中）
 - **目标**：构建真正落地的 AI 解决方案，持续输出高质量开源与内容
 
