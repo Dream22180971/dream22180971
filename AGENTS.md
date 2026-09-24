@@ -40,3 +40,23 @@ For other repositories, use the reusable GitHub Actions workflow defined in:
 `.github/workflows/readme-quality.yml`
 
 A README task is not complete until the check has been reviewed.
+
+## Repository metadata apply task
+
+Dry run:
+
+```bash
+node scripts/apply-repository-metadata.mjs
+```
+
+Apply all canonical Description/Topics values (requires authenticated GitHub CLI):
+
+```bash
+node scripts/apply-repository-metadata.mjs --apply
+```
+
+Apply one repository only:
+
+```bash
+node scripts/apply-repository-metadata.mjs --apply --repo=Dream22180971/LLM-Usage-Collector
+```
