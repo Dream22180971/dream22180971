@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "enforcement": {
+    "description": "warn",
+    "topics": "warn"
+  },
+  "repositories": {
+    "Dream22180971/dream22180971": {
+      "description": "Sean Walter — AI developer tools, AI quality engineering and local-first apps.",
+      "topics": [
+        "ai",
+        "developer-tools",
+        "software-testing",
+        "local-first",
+        "portfolio"
+      ]
+    },
+    "Dream22180971/LLM-Usage-Collector": {
+      "description": "Local-first usage analytics for AI coding agents — tokens, models, sessions & cost.",
+      "topics": [
+        "ai-agents",
+        "developer-tools",
+        "llm",
+        "token-usage",
+        "local-first",
+        "python"
+      ]
+    },
+    "Dream22180971/TestPilotAgent": {
+      "description": "AI quality workbench for turning requirements into structured test assets.",
+      "topics": [
+        "ai-testing",
+        "software-testing",
+        "quality-engineering",
+        "llm",
+        "fastapi",
+        "nextjs"
+      ]
+    },
+    "Dream22180971/WorkLife-Dashboard": {
+      "description": "A local-first desktop dashboard for workday progress, reminders and widgets.",
+      "topics": [
+        "local-first",
+        "desktop-app",
+        "tauri",
+        "react",
+        "productivity",
+        "windows"
+      ]
+    },
+    "Dream22180971/agent-memory-hub": {
+      "description": "One Git-backed memory layer shared across multiple AI agents.",
+      "topics": [
+        "ai-agents",
+        "agent-memory",
+        "developer-tools",
+        "git",
+        "local-first",
+        "python"
+      ]
+    },
+    "Dream22180971/wise-council-mcp": {
+      "description": "An MCP server for structured multi-perspective decision making.",
+      "topics": [
+        "mcp",
+        "ai-agents",
+        "decision-making",
+        "developer-tools",
+        "typescript"
+      ]
+    },
+    "Dream22180971/VoyageAI": {
+      "description": "AI trip planner for itineraries, weather, budgets and travel checklists.",
+      "topics": [
+        "ai",
+        "travel-planner",
+        "vue",
+        "fastapi",
+        "llm",
+        "travel"
+      ]
+    },
+    "Dream22180971/YouRenTool": {
+      "description": "A privacy-first, local password manager built with Tauri.",
+      "topics": [
+        "password-manager",
+        "local-first",
+        "privacy",
+        "tauri",
+        "desktop-app",
+        "security"
+      ]
+    },
+    "Dream22180971/YouRenTool-Website": {
+      "description": "Bilingual product website for YouRen, a privacy-first local password manager.",
+      "topics": [
+        "product-website",
+        "password-manager",
+        "privacy",
+        "local-first",
+        "static-site"
+      ]
+    },
+    "Dream22180971/animation-memory-museum": {
+      "description": "A digital museum for Chinese childhood animation memories.",
+      "topics": [
+        "digital-museum",
+        "animation",
+        "nostalgia",
+        "nextjs",
+        "react",
+        "interactive"
+      ]
+    },
+    "Dream22180971/project-showcase": {
+      "description": "A bilingual, motion-rich portfolio for turning repositories into project stories.",
+      "topics": [
+        "portfolio",
+        "nextjs",
+        "react",
+        "framer-motion",
+        "bilingual",
+        "developer-portfolio"
+      ]
+    },
+    "Dream22180971/food-menu-app": {
+      "description": "An AI meal planner for recipe ideas, daily food logs and shopping lists.",
+      "topics": [
+        "ai",
+        "meal-planner",
+        "recipes",
+        "react",
+        "vite",
+        "gemini"
+      ]
+    },
+    "Dream22180971/operation-assistant": {
+      "description": "AI content workflows for Xiaohongshu, Douyin and WeChat creators.",
+      "topics": [
+        "ai",
+        "content-creation",
+        "react",
+        "vite",
+        "creator-tools",
+        "llm"
+      ]
+    },
+    "Dream22180971/Pysystem": {
+      "description": "Full-stack pharmacy management with inventory, RBAC, audit and AI assistance.",
+      "topics": [
+        "spring-boot",
+        "vue",
+        "pharmacy",
+        "rbac",
+        "docker",
+        "full-stack",
+        "ai"
+      ]
+    },
+    "Dream22180971/BaiyueMedicalSalesSystemTest": {
+      "description": "A pytest API regression framework with fixtures, cleanup, parallel runs and reports.",
+      "topics": [
+        "pytest",
+        "api-testing",
+        "test-automation",
+        "software-testing",
+        "python",
+        "allure"
+      ]
+    },
+    "Dream22180971/rag-knowledge-base-demo": {
+      "description": "A lightweight RAG demo with document ingestion, FAISS retrieval and source tracing.",
+      "topics": [
+        "rag",
+        "langchain",
+        "faiss",
+        "streamlit",
+        "llm",
+        "knowledge-base"
+      ]
+    },
+    "Dream22180971/coze-ecommerce-bot": {
+      "description": "A knowledge-base ecommerce support bot built with Coze.",
+      "topics": [
+        "coze",
+        "ai-agent",
+        "rag",
+        "ecommerce",
+        "customer-support",
+        "knowledge-base"
+      ]
+    }
+  }
+}
