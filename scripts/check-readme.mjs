@@ -72,11 +72,36 @@ if (zh && !hasQuickStart(zh, "zh")) {
   addWarning("README.zh-CN.md: no obvious 快速开始 / 下载 / 直接使用 section.");
 }
 
-const pkgText = read("package.json");
-if (pkgText && en) {
-  try {
-    const pkg = JSON.parse(pkgText);
-    const scripts = pkg.scripts || {};
+function findPackageJsons(dir, depth = 0) {
+  if (depth > 3) return [];
+  const ignored = new Set(["node_modules", ".git", ".next", "dist", "build", ".venv", "venv"]);
+  const out = [];
+
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (ignored.has(entry.name)) continue;
+    const full = path.join(dir, entry.name);
+
+    if (entry.isFile() && entry.name === "package.json") {
+      out.push(full);
+    } else if (entry.isDirectory()) {
+      out.push(...findPackageJsons(full, depth + 1));
+    }
+  }
+  return out;
+}
+
+if (en) {
+  const availableNpmScripts = new Set();
+  for (const pkgPath of findPackageJsons(root)) {
+    try {
+      const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
+      for (const script of Object.keys(pkg.scripts || {})) availableNpmScripts.add(script);
+    } catch {
+      addWarning("Could not parse " + path.relative(root, pkgPath) + "; npm command validation is partial.");
+    }
+  }
+
+  if (availableNpmScripts.size) {
     const combinedReadme = [en, zh || ""].join("\n");
     const npmRun = /npm run ([A-Za-z0-9:_-]+)/g;
     let match;
@@ -86,12 +111,10 @@ if (pkgText && en) {
       const script = match[1];
       if (seen.has(script)) continue;
       seen.add(script);
-      if (!Object.prototype.hasOwnProperty.call(scripts, script)) {
-        addError('README references "npm run ' + script + '" but package.json has no such script.');
+      if (!availableNpmScripts.has(script)) {
+        addError('README references "npm run ' + script + '" but no package.json defines that script.');
       }
     }
-  } catch {
-    addWarning("package.json could not be parsed; npm command validation skipped.");
   }
 }
 
@@ -132,15 +155,17 @@ if (fs.existsSync(metadataPath) && repository) {
       .map((s) => s.trim())
       .filter(Boolean);
 
-    if (actualDescription && actualDescription !== expected.description) {
-      addWarning("Repository Description differs from docs/repository-metadata.json.");
+    const descriptionMode = (metadata.enforcement && metadata.enforcement.description) || "warn";
+    const topicsMode = (metadata.enforcement && metadata.enforcement.topics) || "warn";
+    const reportByMode = (mode, message) => mode === "error" ? addError(message) : addWarning(message);
+
+    if (actualDescription !== expected.description) {
+      reportByMode(descriptionMode, "Repository Description differs from docs/repository-metadata.json.");
     }
 
-    if (actualTopics.length) {
-      const missing = expected.topics.filter((t) => !actualTopics.includes(t));
-      if (missing.length) {
-        addWarning("Repository Topics missing canonical topics: " + missing.join(", "));
-      }
+    const missing = expected.topics.filter((t) => !actualTopics.includes(t));
+    if (missing.length) {
+      reportByMode(topicsMode, "Repository Topics missing canonical topics: " + missing.join(", "));
     }
   }
 }
