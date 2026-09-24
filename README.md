@@ -1,9 +1,15 @@
 <div align="center">
 
-# Sean Walter
+<img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&weight=700&size=38&duration=2500&pause=900&color=00F5FF&center=true&vCenter=true&width=900&lines=SEAN+WALTER;AI+DEVELOPER+TOOLS;AI+QUALITY+ENGINEERING;LOCAL-FIRST+APPS" alt="Typing SVG" />
 
 **I build AI developer tools, AI quality engineering tools, and local-first apps that solve real problems.**  
 **我做 AI 开发者工具、AI 质量工程工具，以及真正能解决问题的本地优先应用。**
+
+<img src="https://img.shields.io/badge/AI+DEV+TOOLS-050508?style=for-the-badge&logo=github&logoColor=00f5ff" />
+<img src="https://img.shields.io/badge/AI+QUALITY-111827?style=for-the-badge&logo=checkmarx&logoColor=22c55e" />
+<img src="https://img.shields.io/badge/LOCAL--FIRST-0b1020?style=for-the-badge&logo=tauri&logoColor=f59e0b" />
+
+<br/>
 
 [![Website](https://img.shields.io/badge/Website-seanwalter.top-111111?style=flat-square)](https://seanwalter.top)
 [![GitHub](https://img.shields.io/badge/GitHub-Dream22180971-181717?style=flat-square&logo=github)](https://github.com/Dream22180971)
@@ -15,7 +21,7 @@
 
 ## What I build / 我在做什么
 
-| Direction | 中文 | What I care about |
+| Direction | 中文 | Focus |
 | --- | --- | --- |
 | **AI Developer Tools** | AI 开发者工具 | AI coding workflow, agent tooling, usage & observability |
 | **AI Quality Engineering** | AI 质量工程 | RAG / Agent / MCP / prompt / OCR quality and regression |
@@ -27,7 +33,7 @@ My rule is simple: **build for a real problem, make it runnable in five minutes,
 
 ---
 
-## Featured Projects / 重点项目
+## Featured Missions / 重点项目
 
 ### [LLM Usage Collector](https://github.com/Dream22180971/LLM-Usage-Collector)
 
@@ -49,7 +55,7 @@ A local-first Tauri desktop app for workday progress, reminders, widgets and Chi
 
 ---
 
-## More Projects / 更多项目
+## More Experiments / 更多项目
 
 - [agent-memory-hub](https://github.com/Dream22180971/agent-memory-hub) — Share one Git-backed memory across multiple AI agents.
 - [wise-council-mcp](https://github.com/Dream22180971/wise-council-mcp) — A multi-perspective MCP decision council.
@@ -77,13 +83,25 @@ I care more about **shipping usable tools** than collecting framework logos.
 
 ---
 
-## Writing / 内容
+## Mission Log / 内容输出
 
 I write about AI engineering, software quality, testing and side projects.
 
 我持续记录 AI 工程、软件质量、测试方法和独立项目实践。
 
 **Blog:** [seanwalter.top/knowledge](https://seanwalter.top/knowledge)
+
+---
+
+## Contribution Orbit / 贡献轨道
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dream22180971/Dream22180971/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Dream22180971/Dream22180971/output/github-snake.svg">
+    <img src="https://raw.githubusercontent.com/Dream22180971/Dream22180971/output/github-snake.svg" alt="GitHub contribution snake" />
+  </picture>
+</div>
 
 ---
 
