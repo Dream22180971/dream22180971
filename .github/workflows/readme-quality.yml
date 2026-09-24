@@ -1,0 +1,48 @@
+name: Reusable README Quality
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  readme-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          path: target
+
+      - name: Checkout README standards
+        uses: actions/checkout@v4
+        with:
+          repository: Dream22180971/dream22180971
+          ref: main
+          path: standards
+
+      - name: Read repository metadata
+        id: metadata
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const repo = await github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            const topics = await github.rest.repos.getAllTopics({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            core.setOutput('description', repo.data.description || '');
+            core.setOutput('topics', (topics.data.names || []).join(','));
+
+      - name: Run README quality check
+        env:
+          README_STANDARDS_ROOT: ${{ github.workspace }}/standards
+          REPO_DESCRIPTION: ${{ steps.metadata.outputs.description }}
+          REPO_TOPICS: ${{ steps.metadata.outputs.topics }}
+        run: |
+          node standards/scripts/check-readme.mjs target "$GITHUB_REPOSITORY"
