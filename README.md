@@ -16,7 +16,7 @@
 
 [![Website](https://img.shields.io/badge/Website-seanwalter.top-111111?style=flat-square)](https://seanwalter.top)
 [![GitHub](https://img.shields.io/badge/GitHub-Dream22180971-181717?style=flat-square&logo=github)](https://github.com/Dream22180971)
-[![X](https://img.shields.io/badge/X-@seanwalter__ai-000000?style=flat-square&logo=x)](https://x.com/seanwalter_ai)
+[![X](https://img.shields.io/badge/X-@seanwalterxai-000000?style=flat-square&logo=x)](https://x.com/seanwalterxai)
 
 </div>
 
