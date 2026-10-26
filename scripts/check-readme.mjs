@@ -24,8 +24,8 @@ function addWarning(msg) { warnings.push(msg); }
 const metadata = fs.existsSync(metadataPath) ? JSON.parse(fs.readFileSync(metadataPath, "utf8")) : null;
 const expected = metadata && repository && metadata.repositories ? metadata.repositories[repository] : null;
 
-// README layout per primary language. "en" (default): README.md English + README.zh-CN.md Chinese.
-// "zh-CN": README.md Chinese + README.en.md English; README.zh-CN.md may remain as a redirect.
+// README layout per primary language. "zh-CN" (default): README.md Chinese + README.en.md English;
+// README.zh-CN.md may remain as a redirect. "en" (opt-out): README.md English + README.zh-CN.md Chinese.
 const layouts = {
   "en": [
     { file: "README.md", lang: "en", switchTo: "README.zh-CN.md", switchName: "Simplified Chinese" },
@@ -37,13 +37,13 @@ const layouts = {
   ]
 };
 
-const primaryLanguage = (expected && expected.readmePrimaryLanguage) || "en";
+const primaryLanguage = (expected && expected.readmePrimaryLanguage) || "zh-CN";
 if (!layouts[primaryLanguage]) {
   addError("Unsupported readmePrimaryLanguage \"" + primaryLanguage + "\"; use one of: " + Object.keys(layouts).join(", ") + ".");
 }
-if (primaryLanguage !== "en") console.log("README primary language: " + primaryLanguage);
+if (primaryLanguage !== "zh-CN") console.log("README primary language: " + primaryLanguage);
 
-const readmes = (layouts[primaryLanguage] || layouts.en).map((doc) => ({ ...doc, content: read(doc.file) }));
+const readmes = (layouts[primaryLanguage] || layouts["zh-CN"]).map((doc) => ({ ...doc, content: read(doc.file) }));
 
 for (const doc of readmes) {
   if (!doc.content) {
