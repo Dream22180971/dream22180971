@@ -15,32 +15,26 @@ Within the first 5–10 seconds, a visitor should understand:
 
 ## 2. Language
 
-- `README.md` is the English primary version.
-- `README.zh-CN.md` is the full Simplified Chinese version.
-- Both files must contain a visible language switch near the top.
-- Do not stack English and Chinese paragraph-by-paragraph in one README.
-- The Chinese version should be natural Chinese, not a mechanical line-by-line translation.
-
-Recommended switch:
-
-```md
-[English](./README.md) | [简体中文](./README.zh-CN.md)
-```
-
-### Chinese-first exception
-
-A repository whose audience is primarily Chinese may opt in to a Chinese-first layout by setting `"readmePrimaryLanguage": "zh-CN"` on its entry in `docs/repository-metadata.json`:
+Chinese-first is the standard for every repository:
 
 - `README.md` is the full Simplified Chinese version (shown on the repository home page).
 - `README.en.md` is the full English version.
 - `README.zh-CN.md` may stay as a short redirect to `README.md` so existing links keep working.
-- Both full READMEs must contain the language switch:
+- Both full READMEs must contain a visible language switch near the top.
+- Do not stack English and Chinese paragraph-by-paragraph in one README.
+- The Chinese version should be natural Chinese, not a mechanical line-by-line translation; the English version likewise reads as natural English.
+
+Recommended switch (same order in both files):
 
 ```md
 [简体中文](./README.md) | [English](./README.en.md)
 ```
 
-Without the field, the English-first layout above applies. The repository Description stays English either way.
+The repository Description stays English.
+
+### English-first opt-out
+
+A repository whose audience is primarily international may opt out by setting `"readmePrimaryLanguage": "en"` on its entry in `docs/repository-metadata.json`. Then `README.md` is the full English version, `README.zh-CN.md` the full Chinese version, and the switch is `[English](./README.md) | [简体中文](./README.zh-CN.md)`.
 
 ## 3. First-screen structure
 
@@ -273,7 +267,7 @@ When an AI modifies documentation:
 
 Hard failures:
 
-- missing English or Chinese README (for the layout declared by `readmePrimaryLanguage`)
+- missing English or Chinese README (for the layout in effect: Chinese-first unless `readmePrimaryLanguage` opts out)
 - missing language switch
 - unsupported `readmePrimaryLanguage` value
 - in a Chinese-first repository, a remaining `README.zh-CN.md` that does not link to `README.md`
