@@ -21,24 +21,46 @@ function read(rel) {
 function addError(msg) { errors.push(msg); }
 function addWarning(msg) { warnings.push(msg); }
 
-const en = read("README.md");
-const zh = read("README.zh-CN.md");
+const metadata = fs.existsSync(metadataPath) ? JSON.parse(fs.readFileSync(metadataPath, "utf8")) : null;
+const expected = metadata && repository && metadata.repositories ? metadata.repositories[repository] : null;
 
-if (!en) addError("README.md is missing.");
-if (!zh) addError("README.zh-CN.md is missing.");
+// README layout per primary language. "en" (default): README.md English + README.zh-CN.md Chinese.
+// "zh-CN": README.md Chinese + README.en.md English; README.zh-CN.md may remain as a redirect.
+const layouts = {
+  "en": [
+    { file: "README.md", lang: "en", switchTo: "README.zh-CN.md", switchName: "Simplified Chinese" },
+    { file: "README.zh-CN.md", lang: "zh", switchTo: "README.md", switchName: "English" }
+  ],
+  "zh-CN": [
+    { file: "README.md", lang: "zh", switchTo: "README.en.md", switchName: "English" },
+    { file: "README.en.md", lang: "en", switchTo: "README.md", switchName: "Simplified Chinese" }
+  ]
+};
 
-if (en && !en.includes("README.zh-CN.md")) {
-  addError("README.md is missing the Simplified Chinese language switch.");
+const primaryLanguage = (expected && expected.readmePrimaryLanguage) || "en";
+if (!layouts[primaryLanguage]) {
+  addError("Unsupported readmePrimaryLanguage \"" + primaryLanguage + "\"; use one of: " + Object.keys(layouts).join(", ") + ".");
 }
-if (zh && !zh.includes("README.md")) {
-  addError("README.zh-CN.md is missing the English language switch.");
+if (primaryLanguage !== "en") console.log("README primary language: " + primaryLanguage);
+
+const readmes = (layouts[primaryLanguage] || layouts.en).map((doc) => ({ ...doc, content: read(doc.file) }));
+
+for (const doc of readmes) {
+  if (!doc.content) {
+    addError(doc.file + " is missing.");
+  } else if (!doc.content.includes(doc.switchTo)) {
+    addError(doc.file + " is missing the " + doc.switchName + " language switch.");
+  }
+}
+
+const zhRedirect = primaryLanguage === "zh-CN" ? read("README.zh-CN.md") : null;
+if (zhRedirect && !zhRedirect.includes("README.md")) {
+  addError("README.zh-CN.md exists but does not link to the primary README.md.");
 }
 
 const isProfile = repository.toLowerCase() === "dream22180971/dream22180971";
 
-for (const pair of [["README.md", en], ["README.zh-CN.md", zh]]) {
-  const name = pair[0];
-  const content = pair[1];
+for (const { file: name, content } of readmes) {
   if (!content) continue;
 
   if (!isProfile && content.includes("readme-typing-svg")) {
@@ -65,12 +87,15 @@ function hasQuickStart(content, lang) {
   return patterns.some((r) => r.test(content));
 }
 
-if (en && !hasQuickStart(en, "en")) {
-  addWarning("README.md: no obvious Quick Start / Download / Get it section.");
+for (const { file, lang, content } of readmes) {
+  if (content && !hasQuickStart(content, lang)) {
+    addWarning(lang === "en"
+      ? file + ": no obvious Quick Start / Download / Get it section."
+      : file + ": no obvious 快速开始 / 下载 / 直接使用 section.");
+  }
 }
-if (zh && !hasQuickStart(zh, "zh")) {
-  addWarning("README.zh-CN.md: no obvious 快速开始 / 下载 / 直接使用 section.");
-}
+
+const combined = readmes.map((doc) => doc.content || "").concat(zhRedirect || "").join("\n");
 
 function findPackageJsons(dir, depth = 0) {
   if (depth > 3) return [];
@@ -90,7 +115,7 @@ function findPackageJsons(dir, depth = 0) {
   return out;
 }
 
-if (en) {
+if (readmes[0].content) {
   const availableNpmScripts = new Set();
   for (const pkgPath of findPackageJsons(root)) {
     try {
@@ -102,12 +127,11 @@ if (en) {
   }
 
   if (availableNpmScripts.size) {
-    const combinedReadme = [en, zh || ""].join("\n");
     const npmRun = /npm run ([A-Za-z0-9:_-]+)/g;
     let match;
     const seen = new Set();
 
-    while ((match = npmRun.exec(combinedReadme))) {
+    while ((match = npmRun.exec(combined))) {
       const script = match[1];
       if (seen.has(script)) continue;
       seen.add(script);
@@ -118,7 +142,6 @@ if (en) {
   }
 }
 
-const combined = [en || "", zh || ""].join("\n");
 const scriptRef = /(?:^|[\s`])((?:\.\/|\.\\)?[A-Za-z0-9_./\\-]+\.(?:ps1|sh|bat))(?:[\s`]|$)/gm;
 let scriptMatch;
 const checkedScripts = new Set();
@@ -139,10 +162,7 @@ while ((scriptMatch = scriptRef.exec(combined))) {
   }
 }
 
-if (fs.existsSync(metadataPath) && repository) {
-  const metadata = JSON.parse(fs.readFileSync(metadataPath, "utf8"));
-  const expected = metadata.repositories && metadata.repositories[repository];
-
+if (metadata && repository) {
   if (!expected) {
     addWarning("No canonical repository metadata entry found for " + repository + ".");
   } else {
