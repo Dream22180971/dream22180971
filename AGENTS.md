@@ -17,8 +17,8 @@ For README or repository-metadata work:
 
 1. Inspect the current implementation first.
 2. Verify install/run commands against actual repository files.
-3. Keep `README.md` as the English primary README.
-4. Keep `README.zh-CN.md` as the full Simplified Chinese README.
+3. Keep `README.md` as the English primary README, unless the repository's entry in `docs/repository-metadata.json` sets `"readmePrimaryLanguage": "zh-CN"`; then `README.md` is the full Chinese README and `README.en.md` the full English one (see the Chinese-first exception in the design system).
+4. Keep `README.zh-CN.md` as the full Simplified Chinese README (in Chinese-first repositories it may be a redirect to `README.md`).
 5. Preserve the language switch in both files.
 6. Use the correct README archetype from the design system.
 7. Use project-specific visuals; do not copy one visual gimmick to every repository.

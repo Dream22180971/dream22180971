@@ -27,6 +27,21 @@ Recommended switch:
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 ```
 
+### Chinese-first exception
+
+A repository whose audience is primarily Chinese may opt in to a Chinese-first layout by setting `"readmePrimaryLanguage": "zh-CN"` on its entry in `docs/repository-metadata.json`:
+
+- `README.md` is the full Simplified Chinese version (shown on the repository home page).
+- `README.en.md` is the full English version.
+- `README.zh-CN.md` may stay as a short redirect to `README.md` so existing links keep working.
+- Both full READMEs must contain the language switch:
+
+```md
+[简体中文](./README.md) | [English](./README.en.md)
+```
+
+Without the field, the English-first layout above applies. The repository Description stays English either way.
+
 ## 3. First-screen structure
 
 Recommended order:
@@ -258,8 +273,10 @@ When an AI modifies documentation:
 
 Hard failures:
 
-- missing English or Chinese README
+- missing English or Chinese README (for the layout declared by `readmePrimaryLanguage`)
 - missing language switch
+- unsupported `readmePrimaryLanguage` value
+- in a Chinese-first repository, a remaining `README.zh-CN.md` that does not link to `README.md`
 - typing animation in non-profile project README
 - stale legacy template markers
 - README references an npm script that does not exist
