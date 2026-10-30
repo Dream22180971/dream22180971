@@ -2,7 +2,7 @@
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&weight=700&size=38&duration=2500&pause=900&color=00F5FF&center=true&vCenter=true&width=900&lines=SEAN+WALTER;AI+DEVELOPER+TOOLS;AI+QUALITY+ENGINEERING;LOCAL-FIRST+APPS" alt="Typing SVG" />
 
-# Sean Walter
+# 肖恩沃尔特
 
 **我做 AI 开发者工具、AI 质量工程工具，以及真正能解决问题的本地优先应用。**
 
